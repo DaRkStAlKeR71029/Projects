@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJK Character Creator</title>
+    <style>
+        :root {
+            --Btn_Color: hsl(0, 100%, 50%);
+            --Btn_Color_hover: hsla(0, 100%, 37%, 0.808);
+        }
+
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 20px;
+            background-image: linear-gradient(to right, red, grey, black);
+        }
+
+        #myBtn {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 1em;
+            border-radius: 5px;
+            background-color: var(--Btn_Color);
+            transition: background-color 0.25s;
+        }
+
+        #myBtn:hover {
+            background-color: var(--Btn_Color_hover);
+        }
+
+        h3 {
+            color: black;
+            transition: color 0.8s;
+        }
+
+        h3:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 id="myH32">Race:</h3><br>
+    <h3 id="myH31">Innate Technique:</h3><br>
+    <h3 id="myH33">Inherited Technique:</h3><br>
+    <h3 id="myH34">Domain Expansion:</h3><br>
+    <button id="myBtn" type="submit">Click Me!</button>
+    <script>
+        const domain_expansion = ["Malevolent Shrine",
+            "Coffin of the Iron Mountain",
+            "Unlimited Void",
+            "Self-Embodiement of Perfection",
+            "Chimera Shadow Garden",
+            "Deadly Sentencing",
+            "Idle Death Gamble", "Womb Profusion",
+            "Authentic Mutual Love"];
+        const innate_techniques = ["Straw Doll",
+            "Shrine",
+            "Fire Manipulation",
+            "Ratio",
+            "Idle Transfirguration",
+            "Tool Maniplulation",
+            "Construction",
+            "Boogie Woogie",
+            "Rot",
+            "Puppet Manipulation",
+            "Cursed Spirit Manipluation",
+            "Immortality",
+            "Beasts Summon",
+            "Inverse", "Seance",
+            "Black Bird Manipulation",
+            "Photo Manipulation",
+            "Doll Manipulation",
+            "Miracles",
+            "Ice Formation",
+            "Blazing Courage",
+            "Love Rendezous",
+            "Judgeman",
+            "Comedian",
+            "Sky Manipulation",
+            "Copy",
+            "Star Rage",
+            "Antigravity",
+            "Prayer Song"];
+        const inherited_technique = ["Ten Shadows",
+            "Limitless",
+            "Blood Manipulation",
+            "Cursed Speech",
+            "Projection Sorcery"];
+        const race = ["Human",
+            "Cursed Spirit"];
+
+        document.getElementById("myBtn").onclick = function () {
+            const random1 = innate_techniques[(Math.floor(Math.random() * (innate_techniques.length)))];//Gets a random value from array
+            document.getElementById("myH31").textContent = `Innate Technique: ${random1}`;
+
+            const random3 = inherited_technique[(Math.floor(Math.random() * (inherited_technique.length)))];
+            document.getElementById("myH33").textContent = `Inherited Technique: ${random3}`;
+
+            const random4 = domain_expansion[(Math.floor(Math.random() * (domain_expansion.length)))];
+            document.getElementById("myH34").textContent = `Domain Expansion: ${random4}`;
+
+            const random2 = race[(Math.floor(Math.random() * (race.length)))];
+            document.getElementById("myH32").textContent = `Race: ${random2}`;
+        }
+    </script>
+</body>
+
+</html>
